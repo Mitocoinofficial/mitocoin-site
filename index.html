@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITO Coin - Nova Era</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #FFD700;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 0.5em;
+        }
+        section {
+            padding: 30px 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #FFD700;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        a.button:hover {
+            background-color: #e6c200;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .countdown {
+            font-size: 2em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MITO Coin</h1>
+    <h2>O Nascimento de uma Nova Era</h2>
+</header>
+
+<section>
+    <h2>O que é MITO Coin?</h2>
+    <p>MITO Coin é uma criptomoeda criada para representar força, exclusividade e uma nova visão de valor no mundo digital. Inspirada nos grandes mitos da história, MITO Coin nasce com a proposta de oferecer uma oportunidade única: uma moeda limitada, sob controle inteligente, com crescimento gradual e planejado.</p>
+</section>
+
+<section>
+    <h2>Por que é Exclusivo?</h2>
+    <p>\u2714 Toda a emissão inicial de MITO Coin está sob controle privado, garantindo valorização saudável.<br>
+       \u2714 Vendas em lotes pequenos e progressivos, com aumento gradual do preço.<br>
+       \u2714 Investidores iniciais terão acesso a preços extremamente vantajosos.<br>
+       \u2714 Revenda será liberada em fases, protegendo o valor de quem acreditou primeiro.</p>
+</section>
+
+<section>
+    <h2>Junte-se ao MITO</h2>
+    <p>Entre no nosso grupo oficial no Telegram para receber todas as informações em primeira mão.</p>
+    <a class="button" href="https://t.me/SEU_GRUPO_TELEGRAM" target="_blank">Entrar no Grupo Oficial</a>
+</section>
+
+<section>
+    <h2>Contagem Regressiva para o Lançamento</h2>
+    <div id="countdown" class="countdown"></div>
+</section>
+
+<footer>
+    <p>&copy; 2025 MITO Coin - Todos os direitos reservados</p>
+</footer>
+
+<script>
+    // Configurar a data do lançamento (coloque a data aqui)
+    const launchDate = new Date('2025-05-01T00:00:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = launchDate - now;
+
+        if (diff <= 0) {
+            document.getElementById('countdown').innerHTML = 'O MITO foi lançado!';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
