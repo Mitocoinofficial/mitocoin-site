@@ -8,30 +8,42 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000000;
-            color: #FFD700;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000, #0d0d0d);
+            color: #f5f5f5;
             text-align: center;
         }
         header {
             padding: 40px 20px;
         }
+        header img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
         h1 {
             font-size: 3em;
-            margin-bottom: 0.5em;
+            color: #FFD700;
+            margin-bottom: 0.2em;
         }
         h2 {
             font-size: 2em;
             margin-top: 0.5em;
+            color: #ffffff;
         }
         section {
-            padding: 30px 20px;
+            padding: 40px 20px;
+            background-color: #111;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
         p {
             font-size: 1.2em;
             line-height: 1.5em;
             max-width: 800px;
             margin: 20px auto;
+            color: #d4d4d4;
         }
         a.button {
             display: inline-block;
@@ -41,7 +53,7 @@
             color: #000000;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: background 0.3s;
         }
         a.button:hover {
@@ -50,17 +62,50 @@
         footer {
             margin-top: 50px;
             font-size: 0.9em;
-            color: #555;
+            color: #666;
         }
         .countdown {
             font-size: 2em;
             margin-top: 30px;
+            color: #FFD700;
+        }
+        .hourglass {
+            margin: 30px auto;
+            width: 50px;
+            height: 80px;
+            border: 5px solid #FFD700;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hourglass::before, .hourglass::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #FFD700;
+            animation: flow 4s infinite;
+        }
+        .hourglass::before {
+            top: 0;
+            border-bottom: 5px solid #000;
+        }
+        .hourglass::after {
+            bottom: 0;
+            border-top: 5px solid #000;
+            animation-delay: 2s;
+        }
+
+        @keyframes flow {
+            0%, 100% {height: 50%;}
+            50% {height: 0%;}
         }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="logo.png" alt="MITO Logo">
     <h1>MITO Coin</h1>
     <h2>O Nascimento de uma Nova Era</h2>
 </header>
@@ -72,10 +117,10 @@
 
 <section>
     <h2>Por que é Exclusivo?</h2>
-    <p>\u2714 Toda a emissão inicial de MITO Coin está sob controle privado, garantindo valorização saudável.<br>
-       \u2714 Vendas em lotes pequenos e progressivos, com aumento gradual do preço.<br>
-       \u2714 Investidores iniciais terão acesso a preços extremamente vantajosos.<br>
-       \u2714 Revenda será liberada em fases, protegendo o valor de quem acreditou primeiro.</p>
+    <p>✔ Toda a emissão inicial de MITO Coin está sob controle privado, garantindo valorização saudável.<br>
+       ✔ Vendas em lotes pequenos e progressivos, com aumento gradual do preço.<br>
+       ✔ Investidores iniciais terão acesso a preços extremamente vantajosos.<br>
+       ✔ Revenda será liberada em fases, protegendo o valor de quem acreditou primeiro.</p>
 </section>
 
 <section>
@@ -86,7 +131,8 @@
 
 <section>
     <h2>Contagem Regressiva para o Lançamento</h2>
-    <div id="countdown" class="countdown"></div>
+    <div class="countdown" id="countdown"></div>
+    <div class="hourglass"></div>
 </section>
 
 <footer>
@@ -94,8 +140,8 @@
 </footer>
 
 <script>
-    // Configurar a data do lançamento (coloque a data aqui)
-    const launchDate = new Date('2025-05-01T00:00:00');
+    // Configurar a data do lançamento
+    const launchDate = new Date('2025-05-10T00:00:00');
 
     function updateCountdown() {
         const now = new Date();
